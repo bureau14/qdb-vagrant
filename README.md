@@ -15,7 +15,7 @@ Download the following files and put them in the `testbox/` folder:
 
 * [qdb-utils.deb](https://download.quasardb.net/quasardb/nightly/utils/qdb-utils_2.0.0master-1.deb)
 * [qdb-web-bridge.deb](https://download.quasardb.net/quasardb/nightly/web-bridge/qdb-web-bridge_2.0.0master-1.deb)
-* [qdb-becnhmark.tar-gz](https://download.quasardb.net/quasardb/nightly/bench/qdb-benchmark-2.0.0-Linux.tar.gz)
+* [qdb-benchmark.tar.gz](https://download.quasardb.net/quasardb/nightly/bench/qdb-benchmark-2.0.0-Linux.tar.gz)
 
 ## Spawn the cluster
 
