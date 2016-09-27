@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
       rm -rf /tmp/testbox
 
       export IP_ADDRESS=$(hostname -I | cut -d ' ' -f1)
-      echo $(qdb_httpd --gen-config -c "/etc/qdb/qdb_httpd.conf" "--node=10.0.0.10:2836" "--address=$IP_ADDRESS:8080" --log-level=$1) > /etc/qdb/qdb_httpd.conf
+      echo $(qdb_httpd --gen-config -c "/etc/qdb/qdb_httpd.conf" "--node=10.0.0.10:2836" "--address=$IP_ADDRESS:8080" "--log-level=$1") > /etc/qdb/qdb_httpd.conf
       service qdb_httpd restart
     SHELL
   end
@@ -46,7 +46,7 @@ Vagrant.configure("2") do |config|
         dpkg -i qdbd.deb
         rm qdbd.deb
 
-        echo $(qdbd --gen-config -c "/etc/qdb/qdbd.conf" "--address=$1" "--peer=10.0.0.10:2836" "--replication=$2" "--license-key=$3" "--log-level=$4") > /etc/qdb/qdbd.conf
+        echo $(qdbd --gen-config -c "/etc/qdb/qdbd.conf" "--address=$1" "--peer=10.0.0.10:2836" "--replication=$2" "--license-key=$3 " "--log-level=$4") > /etc/qdb/qdbd.conf
         service qdbd restart
       SHELL
     end
