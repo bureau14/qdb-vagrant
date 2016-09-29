@@ -21,6 +21,7 @@ Vagrant.configure("2") do |config|
     testbox.vm.provision "file", source: "testbox/", destination: "/tmp/"
 
     testbox.vm.provision "shell", args: [log_level], inline: <<-SHELL
+      apt install ntp
       dpkg -i /tmp/testbox/*.deb
       tar xvzf /tmp/testbox/*.tar.gz -C /usr/
       rm -rf /tmp/testbox
@@ -41,10 +42,12 @@ Vagrant.configure("2") do |config|
         vb.cpus = 1
       end
 
+      node.vm.provision "file", source: "node/", destination: "/tmp/"
+
       node.vm.provision "shell", args: ["#{ip_address}:2836",replication_factor,license_key,log_level], inline: <<-SHELL
-        curl -sS -o qdbd.deb https://download.quasardb.net/quasardb/nightly/server/qdb-server_2.0.0master-1.deb
-        dpkg -i qdbd.deb
-        rm qdbd.deb
+        apt install ntp
+        dpkg -i /tmp/node/*.deb
+        rm -rf /tmp/node
 
         echo $(qdbd --gen-config -c "/etc/qdb/qdbd.conf" "--address=$1" "--peer=10.0.0.10:2836" "--replication=$2" "--license-key=$3 " "--log-level=$4") > /etc/qdb/qdbd.conf
         service qdbd restart
