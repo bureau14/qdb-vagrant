@@ -22,8 +22,9 @@ Vagrant.configure("2") do |config|
 
     testbox.vm.provision "shell", args: [log_level], inline: <<-SHELL
       apt install ntp
-      dpkg -i /tmp/testbox/*.deb
       tar xvzf /tmp/testbox/*.tar.gz -C /usr/
+      rm -f /usr/lib/libqdb_api.so
+      dpkg -i /tmp/testbox/*.deb
       rm -rf /tmp/testbox
 
       export IP_ADDRESS=$(hostname -I | cut -d ' ' -f1)
