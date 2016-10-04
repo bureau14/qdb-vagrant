@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
     testbox.vm.provision "file", source: "testbox/", destination: "/tmp/"
 
     testbox.vm.provision "shell", args: [log_level], inline: <<-SHELL
-      apt install ntp
+      apt install -y ntp
       tar xvzf /tmp/testbox/*.tar.gz -C /usr/
       rm -f /usr/lib/libqdb_api.so
       dpkg -i /tmp/testbox/*.deb
@@ -46,7 +46,7 @@ Vagrant.configure("2") do |config|
       node.vm.provision "file", source: "node/", destination: "/tmp/"
 
       node.vm.provision "shell", args: ["#{ip_address}:2836",replication_factor,license_key,log_level], inline: <<-SHELL
-        apt install ntp
+        apt install -y ntp
         dpkg -i /tmp/node/*.deb
         rm -rf /tmp/node
 
