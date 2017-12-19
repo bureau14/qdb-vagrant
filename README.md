@@ -7,16 +7,16 @@ You need:
 
 ## Download packages
 
-Download the following file and put it in the `node/` folder:
+[Download](https://www.quasardb.net/-Get-) the following file and put it in the `node/` folder:
 
-* [qdb-server.deb](https://download.quasardb.net/quasardb/nightly/server/qdb-server_2.0.0master-1.deb)
+* [qdb-server.deb](https://download.quasardb.net/quasardb/nightly/server/qdb-server_<VERSION>.deb)
 
-Download the following files and put them in the `testbox/` folder:
+[Download](https://www.quasardb.net/-Get-) the following files and put them in the `testbox/` folder:
 
-* [qdb-api.deb](https://download.quasardb.net/quasardb/nightly/api/c/qdb-api_2.0.0master-1.deb)
-* [qdb-utils.deb](https://download.quasardb.net/quasardb/nightly/utils/qdb-utils_2.0.0master-1.deb)
-* [qdb-web-bridge.deb](https://download.quasardb.net/quasardb/nightly/web-bridge/qdb-web-bridge_2.0.0master-1.deb)
-* [qdb-benchmark.tar.gz](https://download.quasardb.net/quasardb/nightly/bench/qdb-benchmark-2.0.0-Linux.tar.gz)
+* [qdb-api.deb](https://download.quasardb.net/quasardb/nightly/api/c/qdb-api_<VERSION>.deb)
+* [qdb-utils.deb](https://download.quasardb.net/quasardb/nightly/utils/qdb-utils_<VERSION>.deb)
+* [qdb-web-bridge.deb](https://download.quasardb.net/quasardb/nightly/web-bridge/qdb-web-bridge_<VERSION>.deb)
+* [qdb-benchmark.tar.gz](https://download.quasardb.net/quasardb/nightly/bench/qdb-benchmark-<VERSION>-Linux.tar.gz)
 
 ## Spawn the cluster
 
